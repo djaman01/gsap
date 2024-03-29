@@ -1,5 +1,29 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapFromTo = () => {
   // TODO: Implement the gsap.fromTo() method
+
+
+  //importer useGap et gsap !!!
+  useGSAP(() => {
+    gsap.fromTo("#red-box", 
+    { //1er objet défibit position initiale
+      x:0,
+      rotation:0,
+      borderRadius: '0%'
+    },
+     {//2ème objet définit l'animation et donc position finale
+      x: 250,
+      repeat: -1,
+      yoyo: true,
+      borderRadius:"100%",
+      rotation: 360,
+      duration: 2,
+      ease: "power1.inOut", //donne un effet d'aller retour plus naturel
+    });
+  }, []);
+
 
   return (
     <main>
