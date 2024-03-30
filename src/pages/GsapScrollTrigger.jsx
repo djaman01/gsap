@@ -25,7 +25,7 @@ const GsapScrollTrigger = () => {
         //Ici on va utiliser le scrollTrigger pour que l'animation ne s'active que quand on arrive à son niveau après avoir scroll
         scrollTrigger: {
           trigger: e,
-          start:"top bottom", //When the top of the element hits the bottom of the viewport the animations will begin
+          start:"top bottom", //When the top of the element hits the bottom of the viewport the animations will begin / Donc si on voit le rose d'abord il va bouger et le orange ne vougera que quand on le verra
           // scrub: true, pour que l'animation start QUE quand on scroll et qu'on voit l'element
           toggleActions: "restart pause reverse restart", //possible d'écrire: play/pause/resume/restart/reset/complete/none
           //1er:Ce qu'il se passe quand l'élement entre dans le viewport / 2eme: Quand on dépasse le viewport et qu'on ne voit plus l'élement /3ème: Quand on revient à l'élement après l'avoir dépassé/4ème: quand on revient en haut de la page et qu'on dépasse l'élement (pause ou restart est bien ici)
