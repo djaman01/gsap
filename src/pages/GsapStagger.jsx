@@ -10,7 +10,7 @@ const GsapStagger = () => {
       borderRadius: "100%", //to turn it into a circle
       repeat: -1,
       yoyo: true,
-      stagger: 0.5, //Les élements avec className="stagger-box", vont s'animer 1 après l'autre, avec un délai de 0.5s
+      // stagger: 0.5, //Les élements avec className="stagger-box", vont s'animer 1 après l'autre, avec un délai de 0.5s
       //ou on peut ajouter un objet stagger avec des propeiétés + précises
       stagger: {
         amount: 1.5, //c'est le délais d'animation entre chaque élements mais ce n'est pas des secondes comme avant

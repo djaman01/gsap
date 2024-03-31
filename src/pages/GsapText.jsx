@@ -1,8 +1,32 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 const GsapText = () => {
   // TODO: Implement gsap text animation
+  useGSAP(() => {
+    gsap.to("#text", {
+      y: 0, //car on avait mis translate-y-10, donc le text était en bas et on veut le remonter pour l'animer
+      opacity: 1,
+      ease: "power1.inOut",
+    });
+
+    gsap.fromTo(".para",
+      {
+        opacity: 0, //on rend le text invisible en 1 pour ensuite le rendre visible en 2
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        delay: 0.6, //Délai entre les animations de useGSAP (gsap.to) et celle-ci(gsap.fromTo)
+        stagger:0.2 //Délai d'animatrion entre les paragraphes ciblés dans CE gsap.fromTo et c'est tout
+      }
+    );
+  }, []);
 
   return (
     <main>
+      {/* parcequ'il y a opacity-0, on ne voit pas le texte "Gsap Text" / Le but est de le rendre visible avec une animation gsap*/}
       <h1 id="text" className="opacity-0 translate-y-10">
         GsapText
       </h1>
